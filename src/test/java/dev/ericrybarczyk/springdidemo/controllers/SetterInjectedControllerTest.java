@@ -1,6 +1,6 @@
 package dev.ericrybarczyk.springdidemo.controllers;
 
-import dev.ericrybarczyk.springdidemo.services.GreetingServiceImpl;
+import dev.ericrybarczyk.springdidemo.services.ConstructorInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class SetterInjectedControllerTest {
     void setUp() {
         // pretend we are an IoC container and inject the needed dependency
         controller = new SetterInjectedController();
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorInjectedGreetingService());
     }
 
     @Test

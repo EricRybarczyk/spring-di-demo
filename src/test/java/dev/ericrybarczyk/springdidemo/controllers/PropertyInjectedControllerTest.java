@@ -1,6 +1,6 @@
 package dev.ericrybarczyk.springdidemo.controllers;
 
-import dev.ericrybarczyk.springdidemo.services.GreetingServiceImpl;
+import dev.ericrybarczyk.springdidemo.services.ConstructorInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class PropertyInjectedControllerTest {
     void setUp() {
         // generally mimic what Spring Framework does for us - provide needed dependencies
         controller = new PropertyInjectedController();
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorInjectedGreetingService();
     }
 
     @Test
