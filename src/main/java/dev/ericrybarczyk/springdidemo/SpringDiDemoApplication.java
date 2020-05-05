@@ -1,9 +1,6 @@
 package dev.ericrybarczyk.springdidemo;
 
-import dev.ericrybarczyk.springdidemo.controllers.ConstructorInjectedController;
-import dev.ericrybarczyk.springdidemo.controllers.DemoController;
-import dev.ericrybarczyk.springdidemo.controllers.PropertyInjectedController;
-import dev.ericrybarczyk.springdidemo.controllers.SetterInjectedController;
+import dev.ericrybarczyk.springdidemo.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -23,6 +20,9 @@ public class SpringDiDemoApplication {
         String greeting = controller.sayHello();
         System.out.println(greeting + " (Return value from DemoController.sayHello() which is called from SpringDiDemoApplication main() method)");
 
+        System.out.println("------- I18nController");
+        I18nController i18nController = (I18nController) applicationContext.getBean("i18nController");
+        System.out.println(i18nController.sayHello());
 
         // get references to our Spring Components to see how they can get injected for us
 
