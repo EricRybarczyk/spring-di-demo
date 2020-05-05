@@ -17,9 +17,12 @@ public class SpringDiDemoApplication {
      */
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringDiDemoApplication.class, args);
+
         DemoController controller = (DemoController) applicationContext.getBean("demoController");
+        System.out.println("------- Primary Bean");
         String greeting = controller.sayHello();
-        System.out.println(greeting + " (Return value from DemoController.sayHello() which is  called from SpringDiDemoApplication main() method)");
+        System.out.println(greeting + " (Return value from DemoController.sayHello() which is called from SpringDiDemoApplication main() method)");
+
 
         // get references to our Spring Components to see how they can get injected for us
 
